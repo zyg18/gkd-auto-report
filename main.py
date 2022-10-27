@@ -112,7 +112,7 @@ def submit(s: requests.Session):
     elif result.get('m') == '今天已经填报了':
         print(time_str + '今天已经填报了')
         if time_now.tm_hour >= 6:
-            send_message('打卡成功', '打卡成功！')
+            send_message('今日已经填报', '今日已经填报！')
     else:
         send_message('打卡失败', r.json().get("m"))
 
