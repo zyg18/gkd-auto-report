@@ -34,7 +34,7 @@ def login(s: requests.Session):
 
 
 def submit(s: requests.Session):
-    days = rrule.rrule(rrule.DAILY,dtstart=parse('2022-10-27'),until=datetime.date.today()).count()
+    days = rrule.rrule(rrule.DAILY,dtstart=parse('2022-10-28'),until=datetime.date.today()).count()
     
     pcr = 1 if(days%3==1) else 0
     PCR = str(pcr)
@@ -44,7 +44,7 @@ def submit(s: requests.Session):
 
         # submitted date
         "date": time.strftime(r"%Y-%m-%d", time_now),
-        "jzdz": "北京市怀柔区中国科学院大学雁栖湖校区",     # Residential Address
+        "jzdz": "北京市怀柔区中国科学院大学雁栖湖西区5-162",     # Residential Address
         "zrzsdd": "1",                       # Yesterday place to stay    1.雁栖湖  8.京外
         # Whether you are in school or not  1.是, 主要是在雁栖湖校区   5.否
         "sfzx": "1",
@@ -76,16 +76,16 @@ def submit(s: requests.Session):
         # 昨天是否接受核酸检测
         "sfjshsjc": PCR,                     # PCR test?       1.是 0.否
         # 第一针接种
-        "dyzymjzqk": "2",                    # first vaccination situation  3.已接种
-        "dyzjzsj": "2021-03-13",             # date of first vaccination
+        "dyzymjzqk": "1",                    # first vaccination situation  3.已接种
+        "dyzjzsj": "2021-06-10",             # date of first vaccination
         "dyzwjzyy": "",
         # 第二针接种
-        "dezymjzqk": "2",                    # second vaccination situation  3.已接种
-        "dezjzsj": "2021-04-03",             # date of second vaccination
+        "dezymjzqk": "1",                    # second vaccination situation  3.已接种
+        "dezjzsj": "2021-07-02",             # date of second vaccination
         "dezwjzyy": "",
         # 第三针接种
-        "dszymjzqk": "2",                    # third vaccination situation  6.未接种
-        "dszjzsj": "2021-11-06",             # default time
+        "dszymjzqk": "1",                    # third vaccination situation  6.未接种
+        "dszjzsj": "2022-02-17",             # default time
         "dszwjzyy": "",            # reason of non-vaccination
 
         "gtshryjkzk": "1",                   # health situation
